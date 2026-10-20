@@ -39,11 +39,11 @@
 
   // Whole card is clickable: it follows the card's own CTA link
   document.querySelectorAll('[data-card-link]').forEach(card => {
-    const link = card.querySelector('.service-card__cta, .package-card__foot a');
+    const link = card.querySelector('.service-card__cta, .package-card__foot a, .card-drawer a');
     if (!link) return;
     card.addEventListener('click', event => {
       if (event.target.closest('a, button')) return;
-      if (event.metaKey || event.ctrlKey) window.open(link.href, '_blank', 'noopener');
+      if (event.metaKey || event.ctrlKey || link.target === '_blank') window.open(link.href, '_blank', 'noopener');
       else link.click();
     });
   });
