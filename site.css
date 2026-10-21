@@ -1419,6 +1419,12 @@ button { font: inherit; color: inherit; }
   .ai-tip__close { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .14); color: #fff; cursor: pointer; }
   .ai-tip__close svg { width: 14px; height: 14px; }
 }
+/* style wheel: pill sits right under the photos with a pointer up at the picked one; more air before the title */
+@media (max-width: 600px) {
+  .quiz-alt__stack { height: 124px; }
+  .quiz-alt__match { top: 84px; overflow: visible; }
+  .quiz-alt__match::before { content: ""; position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; margin-left: -5px; border-radius: 2px; background: #fff; transform: rotate(45deg); }
+}
 @media (max-width: 600px) and (prefers-reduced-motion: reduce) {
   .mobile-tabbar__ai::before, .mobile-tabbar__ai::after, .mobile-tabbar__ai.is-talking .ai-chat__orb { animation: none; }
 }
