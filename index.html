@@ -10,10 +10,10 @@
     <link rel="preload" href="./assets/villa-white-model.png" as="image" />
     <link rel="preload" href="./assets/fonts/IBMPlexSansArabic-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="./assets/fonts/IBMPlexSansArabic-Bold.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="stylesheet" href="./styles.css?v=8" />
-    <link rel="stylesheet" href="./site.css?v=8" />
-    <script src="./reveal.js?v=8" defer></script>
-    <script src="./site.js?v=8" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=10" />
+    <link rel="stylesheet" href="./site.css?v=10" />
+    <script src="./reveal.js?v=10" defer></script>
+    <script src="./site.js?v=10" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
@@ -50,11 +50,13 @@
       <!-- ============ Hero ============ -->
       <section class="architectural-hero" aria-labelledby="hero-title">
         <div class="architectural-reveal" tabindex="0" role="img" aria-label="مخطط معماري تفصيلي لفيلا عصرية ومسبح. مرر المؤشر أو اسحب بإصبعك لكشف التصميم الواقعي. يمكن استخدام الأسهم من لوحة المفاتيح أيضًا.">
-          <!-- previous still background: ./assets/villa-white-model.png (kept as the poster) -->
-          <video class="architectural-reveal__image architectural-reveal__image--wireframe" src="./assets/villa-background.mp4" poster="./assets/villa-white-model.png" width="1672" height="941" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
-          <img class="architectural-reveal__image architectural-reveal__image--realistic" src="./assets/villa-realistic.png" alt="" width="1672" height="941" draggable="false" />
+          <!-- previous hero pair kept in assets: villa-background.mp4 + villa-realistic.png -->
+          <video class="architectural-reveal__image architectural-reveal__image--wireframe" src="./assets/villa-model-v2.mp4" poster="./assets/villa-model-v2-poster.jpg" width="1280" height="720" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+          <img class="architectural-reveal__image architectural-reveal__image--realistic" src="./assets/villa-realistic-v2.webp" alt="" width="2000" height="1126" draggable="false" />
           <span class="architectural-reveal__edge" aria-hidden="true"></span>
           <span class="architectural-reveal__lighting" aria-hidden="true"></span>
+          <span class="architectural-reveal__glare" aria-hidden="true"></span>
+          <span class="architectural-reveal__shine" aria-hidden="true"></span>
         </div>
 
         <div class="hero-overlay" aria-hidden="true"></div>

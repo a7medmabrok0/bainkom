@@ -14,6 +14,9 @@
   const depthTarget = { x: 0, y: 0, tiltX: 0, tiltY: 0 };
   const flow = { x: 1, y: 0, targetX: 1, targetY: 0, strength: 0, target: 0, steadyEdge: 0, sizeScale: 1 };
   const droplets = [];
+  // the image layers are drawn a bit larger than the hero so the 3D tilt never shows an edge
+  const SCALE = 1.08;
+  const hero = reveal.closest('.architectural-hero') || reveal;
   const strokes = [];
   let canvas, context, maskCanvas, maskContext, gooCanvas, gooContext, observer, frame = 0, width = 0, height = 0;
   let lastFrame = 0, lastPointer, lastSplash = 0, ambientTimer, strokeCount = 0, lastMotion = 0;
@@ -226,8 +229,8 @@
     velocity.size *= Math.pow(.78, step);
     flow.sizeScale += velocity.size * step;
 
-    const cx = (current.x * width - width / 2 - depth.x) / 1.04 + width / 2;
-    const cy = (current.y * height - height / 2 - depth.y) / 1.04 + height / 2;
+    const cx = (current.x * width - width / 2 - depth.x) / SCALE + width / 2;
+    const cy = (current.y * height - height / 2 - depth.y) / SCALE + height / 2;
     reveal.style.setProperty('--reveal-x', `${width ? cx / width * 100 : 50}%`);
     reveal.style.setProperty('--reveal-y', `${height ? cy / height * 100 : 50}%`);
     reveal.style.setProperty('--reveal-opacity', String(mainScale));
@@ -235,6 +238,9 @@
     reveal.style.setProperty('--depth-y', `${depth.y}px`);
     reveal.style.setProperty('--tilt-x', `${depth.tiltX}deg`);
     reveal.style.setProperty('--tilt-y', `${depth.tiltY}deg`);
+    // the hero text sits on its own plane and drifts the other way, so the scene reads in depth
+    hero.style.setProperty('--hero-shift-x', `${-depth.x * .35}px`);
+    hero.style.setProperty('--hero-shift-y', `${-depth.y * .35}px`);
     reveal.style.setProperty('--light-x', `${current.x * 100}%`);
     reveal.style.setProperty('--light-y', `${current.y * 100}%`);
 
@@ -328,6 +334,39 @@
       }
       context.restore();
 
+      if (path && mainScale > .02 && !reducedMotion.matches) {
+        const size = radius() * mainScale * flow.sizeScale;
+        // glass-lens shading: a soft highlight top-left and a shade bottom-right make the reveal bulge out
+        context.save();
+        context.globalCompositeOperation = 'source-atop';
+        let shade = context.createRadialGradient(cx - size * .42, cy - size * .5, 0, cx - size * .42, cy - size * .5, size * 1.05);
+        shade.addColorStop(0, `rgba(255, 246, 230, ${.34 * mainScale})`);
+        shade.addColorStop(1, 'rgba(255, 246, 230, 0)');
+        context.fillStyle = shade;
+        context.fillRect(0, 0, width, height);
+        shade = context.createRadialGradient(cx + size * .55, cy + size * .62, 0, cx + size * .55, cy + size * .62, size * 1.1);
+        shade.addColorStop(0, `rgba(24, 28, 30, ${.24 * mainScale})`);
+        shade.addColorStop(1, 'rgba(24, 28, 30, 0)');
+        context.fillStyle = shade;
+        context.fillRect(0, 0, width, height);
+        // thin rim light along the upper-left edge
+        const rim = context.createLinearGradient(cx - size, cy - size, cx + size, cy + size);
+        rim.addColorStop(0, `rgba(255, 255, 255, ${.85 * mainScale})`);
+        rim.addColorStop(.45, 'rgba(255, 255, 255, 0)');
+        context.strokeStyle = rim;
+        context.lineWidth = 3;
+        context.stroke(path);
+        context.restore();
+        // the lens floats above the model: a blurred contact shadow falls down and away from the light
+        context.save();
+        context.globalCompositeOperation = 'destination-over';
+        context.filter = 'blur(26px)';
+        context.fillStyle = `rgba(28, 32, 30, ${.3 * mainScale})`;
+        context.translate(-depth.x * .4 + 6, 26 - depth.y * .4);
+        context.fill(path);
+        context.restore();
+      }
+
       canvas.style.opacity = '1';
     } else if (canvas) {
       context.clearRect(0, 0, width, height);
@@ -410,8 +449,8 @@
           const side = (Math.random() - .5) * edge * .9;
           const behind = edge * (.78 + Math.random() * .15);
           droplets.push({
-            x: (x * bounds.width - behind * ux - side * uy - depth.x) / 1.04 + bounds.width * (.5 - .5 / 1.04),
-            y: (y * bounds.height - behind * uy + side * ux - depth.y) / 1.04 + bounds.height * (.5 - .5 / 1.04),
+            x: (x * bounds.width - behind * ux - side * uy - depth.x) / SCALE + bounds.width * (.5 - .5 / SCALE),
+            y: (y * bounds.height - behind * uy + side * ux - depth.y) / SCALE + bounds.height * (.5 - .5 / SCALE),
             vx: -ux * (.5 + Math.random() * .7) - uy * (Math.random() - .5) * 1,
             vy: -uy * (.5 + Math.random() * .7) + ux * (Math.random() - .5) * 1,
             size: 16 + Math.random() * 18,
@@ -425,10 +464,10 @@
     lastPointer = { x, y, time: now };
     target.x = x;
     target.y = y;
-    depthTarget.x = reducedMotion.matches ? 0 : (x - .5) * 24;
-    depthTarget.y = reducedMotion.matches ? 0 : (y - .5) * 18;
-    depthTarget.tiltX = reducedMotion.matches ? 0 : (.5 - y) * 3;
-    depthTarget.tiltY = reducedMotion.matches ? 0 : (x - .5) * 3;
+    depthTarget.x = reducedMotion.matches ? 0 : (x - .5) * 46;
+    depthTarget.y = reducedMotion.matches ? 0 : (y - .5) * 30;
+    depthTarget.tiltX = reducedMotion.matches ? 0 : (.5 - y) * 6.5;
+    depthTarget.tiltY = reducedMotion.matches ? 0 : (x - .5) * 6.5;
     schedule();
   }
   function show() {

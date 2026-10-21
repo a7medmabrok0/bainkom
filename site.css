@@ -125,7 +125,7 @@ button { font: inherit; color: inherit; }
     linear-gradient(to left, rgba(243, 240, 233, .7) 0%, rgba(243, 240, 233, 0) 46%),
     linear-gradient(to bottom, rgba(243, 240, 233, .55) 0%, rgba(243, 240, 233, 0) 18%);
 }
-.hero-content { position: absolute; inset: auto 0 0; z-index: 4; padding-bottom: clamp(72px, 16vh, 170px); pointer-events: none; }
+.hero-content { position: absolute; inset: auto 0 0; z-index: 4; padding-bottom: clamp(72px, 16vh, 170px); pointer-events: none; transform: translate3d(var(--hero-shift-x, 0px), var(--hero-shift-y, 0px), 0); will-change: transform; }
 .hero-content .container { display: grid; justify-items: start; gap: 14px; }
 .hero-content a { pointer-events: auto; }
 .hero-title { font-size: clamp(36px, 5.2vw, 72px); line-height: 1.12; font-weight: 700; letter-spacing: -.015em; max-width: 14ch; text-wrap: balance; }
