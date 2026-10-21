@@ -1369,17 +1369,56 @@ button { font: inherit; color: inherit; }
   @keyframes match-pop { 50% { box-shadow: 0 0 0 4px rgba(196, 142, 83, .25), 0 4px 13px rgba(13, 28, 36, .35); } }
 
   /* packages: faint gold logo watermark in the bottom-left corner */
-  #packages { background: url("./assets/mobile/b-watermark.svg") left -26px bottom -46px / 150px 188px no-repeat, linear-gradient(180deg, #f3f0e9, #faf8f4); }
 
   /* reviews: the client's own avatar next to the client's name and country */
   .avatar-pair .avatar--client { display: grid; }
-  .avatar-pair img.avatar { display: none; }
+  .avatar-pair img.avatar:not(.avatar--client) { display: none; }
 
   /* blog: snapping keeps the 16px start inset */
   .blog-grid { scroll-padding-inline: 16px; }
 
   /* join: full-width centered button, no arrow, faint logo watermark */
-  .join-one__col, .join-one__col:first-child, .join-one__col + .join-one__col { background: url("./assets/mobile/b-watermark.svg") left -22px bottom -30px / 84px 105px no-repeat, #f1ece3; }
+  .join-one__col, .join-one__col:first-child, .join-one__col + .join-one__col { background: url("./assets/mobile/b-watermark.svg") left -22px top -26px / 84px 105px no-repeat, #f1ece3; }
   .join-one__col .btn { justify-self: stretch; justify-content: center; width: 100%; }
   .join-one__col .btn svg { display: none; }
+}
+
+/* ===== Mobile round 3: designer avatar without shadow, flatter style wheel centred in its card, watermark inside each
+   package card, full-round tab bar, talking AI button with a dismissible "start here" tip ===== */
+.ai-tip { display: none; }
+@media (max-width: 600px) {
+  .designer-card__id { min-height: 30px; }
+  .designer-card__id .avatar--lg { box-shadow: 0 0 0 3px #fff; }
+
+  /* style wheel: 16 faces on a wide radius so it reads as a gentle curve; clipped to the card's sides */
+  .quiz-alt__stack { width: 100%; }
+  .quiz-ring { inset: -44px -16px 0; perspective: 1100px; perspective-origin: 50% 50%; -webkit-clip-path: inset(0 0 -40px 0 round 0); clip-path: inset(0 0 -40px 0 round 0); }
+  .quiz-ring__spin { width: 84px; height: 110px; margin-left: -42px; transform: translateZ(-232px) rotateY(var(--a, 0deg)); }
+  .quiz-ring figure { transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(232px); }
+
+  /* packages: logo watermark in each card's bottom-left corner */
+  #packages { background: linear-gradient(180deg, #f3f0e9, #faf8f4); }
+  .pkg { background: url("./assets/mobile/b-watermark.svg") left -18px bottom -30px / 86px 108px no-repeat, #fff; }
+
+  /* tab bar: pill shape, tighter columns so labels get breathing room */
+  .mobile-tabbar { grid-template-columns: 1fr 1fr 64px 1fr 1fr; padding: 6px 14px 8px; border-radius: 999px; }
+  .mobile-tabbar a { padding-inline: 0; font-size: 10px; white-space: nowrap; }
+
+  /* AI button "talks": soft rings ripple out and the orb pulses while the tip is up */
+  .mobile-tabbar__ai::before, .mobile-tabbar__ai::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(196, 142, 83, .55); opacity: 0; pointer-events: none; animation: ai-talk-ring 2.4s ease-out infinite; }
+  .mobile-tabbar__ai::after { animation-delay: 1.2s; }
+  .mobile-tabbar__ai.is-talking .ai-chat__orb { animation: ai-talk .5s ease-in-out infinite alternate; }
+  @keyframes ai-talk-ring { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(1.7); } }
+  @keyframes ai-talk { from { transform: scale(1); } to { transform: scale(1.07); } }
+
+  .ai-tip { position: fixed; z-index: 71; left: 50%; bottom: calc(118px + env(safe-area-inset-bottom)); display: flex; align-items: center; gap: 2px; padding: 4px 4px 4px 6px; border-radius: 999px; background: var(--navy); color: #fff; box-shadow: 0 14px 30px -14px rgba(14, 29, 36, .6); opacity: 0; transform: translate(-50%, 8px) scale(.9); transition: opacity .3s, transform .4s var(--ease); pointer-events: none; }
+  .ai-tip::after { content: ""; position: absolute; left: 50%; bottom: -5px; width: 10px; height: 10px; margin-left: -5px; background: inherit; border-radius: 2px; transform: rotate(45deg); }
+  .ai-tip.is-shown { opacity: 1; transform: translate(-50%, 0) scale(1); pointer-events: auto; }
+  .ai-tip[hidden] { display: none; }
+  .ai-tip__text { padding: 6px 4px 6px 8px; border: 0; background: none; color: inherit; font: inherit; font-size: 13px; font-weight: 600; white-space: nowrap; cursor: pointer; }
+  .ai-tip__close { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .14); color: #fff; cursor: pointer; }
+  .ai-tip__close svg { width: 14px; height: 14px; }
+}
+@media (max-width: 600px) and (prefers-reduced-motion: reduce) {
+  .mobile-tabbar__ai::before, .mobile-tabbar__ai::after, .mobile-tabbar__ai.is-talking .ai-chat__orb { animation: none; }
 }

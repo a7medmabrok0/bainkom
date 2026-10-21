@@ -142,7 +142,7 @@
     let pick = 0;
     const front = a => ((Math.round(-a / step) % cards.length) + cards.length) % cards.length;
     const show = a => {
-      spin.style.transform = `rotateY(${a}deg)`;
+      spin.style.setProperty('--a', `${a}deg`);
       const i = front(a);
       cards.forEach((card, n) => card.classList.toggle('is-front', n === i));
       return i;
@@ -231,6 +231,33 @@
     };
     setTimeout(nudge, 3500);
     setInterval(nudge, 22000);
+
+    // phones: the tab-bar AI button "talks" and shows "start here" now and then; × hides it for good
+    const tip = document.querySelector('[data-ai-tip]');
+    if (tip && tabbarAi) {
+      const key = 'bainkom-ai-tip-off';
+      let off = false;
+      try { off = localStorage.getItem(key) === '1'; } catch {}
+      const hide = () => { tip.classList.remove('is-shown'); tabbarAi.classList.remove('is-talking'); };
+      const show = () => {
+        if (off || !panel.hidden) return;
+        tip.hidden = false;
+        requestAnimationFrame(() => tip.classList.add('is-shown'));
+        tabbarAi.classList.add('is-talking');
+        setTimeout(hide, 5200);
+      };
+      tip.querySelector('[data-ai-tip-open]').addEventListener('click', () => { hide(); setOpen(true); });
+      tip.querySelector('[data-ai-tip-close]').addEventListener('click', () => {
+        off = true;
+        hide();
+        try { localStorage.setItem(key, '1'); } catch {}
+      });
+      tabbarAi.addEventListener('click', hide);
+      if (!off) {
+        setTimeout(show, 4000);
+        setInterval(show, 25000);
+      }
+    }
 
     // Placeholder replies until the real assistant API is connected
     const replies = [
