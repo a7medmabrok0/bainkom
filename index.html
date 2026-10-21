@@ -11,7 +11,7 @@
     <link rel="preload" href="./assets/fonts/IBMPlexSansArabic-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="./assets/fonts/IBMPlexSansArabic-Bold.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="stylesheet" href="./styles.css?v=19" />
-    <link rel="stylesheet" href="./site.css?v=22" />
+    <link rel="stylesheet" href="./site.css?v=27" />
     <script src="./reveal.js?v=19" defer></script>
     <script src="./site.js?v=19" defer></script>
   </head>
@@ -64,7 +64,7 @@
         <div class="hero-content">
           <div class="container">
             <div class="hero-copy">
-              <h1 id="hero-title" class="hero-title">حين يلتقي التصميم <span class="text-gold">بالتنفيذ</span></h1>
+              <h1 id="hero-title" class="hero-title">حين يلتقي<br class="m-only" /> التصميم <span class="text-gold">بالتنفيذ</span></h1>
               <p class="hero-lead">بينكم تصمّم، وبيور سبيس تحوّل التصميم إلى واقع. اختر مصممك المعتمد، وتابع مساحتك وهي تنتقل من المخطط إلى الواقع.</p>
               <div class="hero-actions">
                 <a class="btn btn--ai btn--lg" href="https://www.bainkom.com/ar/interior-design-style-quiz">
@@ -103,7 +103,7 @@
         <div class="container">
           <header class="section-head" data-reveal>
             <p class="eyebrow"><span class="eyebrow__dot"></span>خدماتنا</p>
-            <h2 id="services-title" class="section-title">كل ما تحتاجه <span class="text-gold">مساحتك</span><span class="m-cut">، <span class="text-gold">في منصة واحدة</span></span></h2>
+            <h2 id="services-title" class="section-title"><span class="d-only">كل ما تحتاجه <span class="text-gold">مساحتك</span><span class="m-cut">، <span class="text-gold">في منصة واحدة</span></span></span><span class="m-only">خدماتنا</span></h2>
             <p class="m-only m-desc">من الاستشارة للتنفيذ، في منصة واحدة</p>
             <a class="m-only m-all" href="https://www.bainkom.com/ar/our-designers">عرض الكل <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             <p class="section-lead">من أول استشارة وحتى آخر تفصيلة في الإضاءة، نوصلك بالمصمم المناسب لكل مرحلة.</p>
@@ -113,7 +113,7 @@
             <article class="svc" data-card-link>
               <img class="svc__img" src="./assets/services/consultation.webp" alt="" loading="lazy" />
               <div class="svc__body">
-                <h3>الاستشارة<br class="svc__br" /> مع مصمم</h3>
+                <h3><span class="d-only">الاستشارة<br class="svc__br" /> مع مصمم</span><span class="m-only">استشارة تصميم</span></h3>
                 <p>احصل على استشارة تصميم مخصصة لتحويل رؤيتك إلى واقع.</p>
               </div>
               <a class="svc__cta" href="https://www.bainkom.com/ar/our-designers?hasAvailability=true">اكتشف المصممين المتاحين <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -511,8 +511,8 @@
           <div class="quiz-alt" data-reveal>
             <div class="quiz-alt__text">
               <p class="eyebrow"><span class="eyebrow__dot"></span>اختبار الستايل بالذكاء الاصطناعي · دقيقتان</p>
-              <h2 id="quiz-title">اكتشف <span class="text-gold">ستايلك</span> في دقيقتين</h2>
-              <p>أجب عن أسئلة بسيطة واختر المساحات اللي تحسها قريبة منك، وسنحدد أسلوب التصميم الداخلي المثالي لشخصيتك ونرشّح لك المصممين المناسبين.</p>
+              <h2 id="quiz-title"><span class="m-only">اضغط هنا و</span>اكتشف <span class="text-gold">ستايلك</span> في دقيقتين</h2>
+              <p><span class="d-only">أجب عن أسئلة بسيطة واختر المساحات اللي تحسها قريبة منك، وسنحدد أسلوب التصميم الداخلي المثالي لشخصيتك ونرشّح لك المصممين المناسبين.</span><span class="m-only">اكتشف ذوقك، أجب عن أسئلة بسيطة لنرشّح لك الستايل والمصمم</span></p>
               <ul class="quiz-alt__styles" aria-label="أمثلة على الستايلات">
                 <li>الحديث</li><li>الكلاسيكي</li><li class="is-on">الجاباندي</li><li>البسيط</li><li>المعاصر</li><li>الإسلامي</li>
               </ul>
@@ -570,7 +570,7 @@
           <header class="section-head section-head--split" data-reveal>
             <div>
               <p class="eyebrow"><span class="eyebrow__dot"></span>مصممون معتمدون</p>
-              <h2 id="designers-title" class="section-title"><span class="m-cut">تعرّف على </span><span class="text-gold">أهم المصممين</span> لدينا</h2>
+              <h2 id="designers-title" class="section-title"><span class="d-only"><span class="m-cut">تعرّف على </span><span class="text-gold">أهم المصممين</span> لدينا</span><span class="m-only">أهم المصممين</span></h2>
             <p class="m-only m-desc">مصممون معتمدون جاهزون لمشروعك</p>
             <a class="m-only m-all" href="https://www.bainkom.com/ar/our-designers">عرض الكل <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
@@ -911,7 +911,7 @@
                     <img class="avatar" src="./assets/ahmed-mabrouk.jpg" alt="" width="40" height="40" />
                   </span>
                   <span class="review-card__names">
-                    <strong>آمنة <small>· الكويت</small></strong>
+                    <strong>آمنة <small><span class="m-cut">· </span>الكويت</small></strong>
                     <span>صمّم مساحته <b>أحمد مبروك</b></span>
                   </span>
                   <span class="review-card__rating" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><span lang="en">5.0</span></span>
@@ -936,7 +936,7 @@
                     <img class="avatar" src="https://bainkom-live-public.s3.me-central-1.amazonaws.com/resized_images/d4af87bb-ca63-4091-8663-3f070c7e0614.webp" alt="" width="40" height="40" loading="lazy" />
                   </span>
                   <span class="review-card__names">
-                    <strong>أسامة <small>· الأردن</small></strong>
+                    <strong>أسامة <small><span class="m-cut">· </span>الأردن</small></strong>
                     <span>صمّم مساحته <b>ندى مجدي</b></span>
                   </span>
                   <span class="review-card__rating" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><span lang="en">5.0</span></span>
@@ -961,7 +961,7 @@
                     <img class="avatar" src="https://bainkom-live-public.s3.me-central-1.amazonaws.com/resized_images/4e1e2f9c-c817-4309-8adb-92a9696dfff1.webp" alt="" width="40" height="40" loading="lazy" />
                   </span>
                   <span class="review-card__names">
-                    <strong>محمد <small>· السعودية</small></strong>
+                    <strong>محمد <small><span class="m-cut">· </span>السعودية</small></strong>
                     <span>صمّم مساحته <b>ميرنا الشرقاوي</b></span>
                   </span>
                   <span class="review-card__rating" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><span lang="en">5.0</span></span>
@@ -986,7 +986,7 @@
                     <img class="avatar" src="https://bainkom-live-public.s3.me-central-1.amazonaws.com/resized_images/7f7909f9-1800-40f3-ac54-e24653a27271.webp" alt="" width="40" height="40" loading="lazy" />
                   </span>
                   <span class="review-card__names">
-                    <strong>نايا <small>· الأردن</small></strong>
+                    <strong>نايا <small><span class="m-cut">· </span>الأردن</small></strong>
                     <span>صمّم مساحته <b>اياد بدره</b></span>
                   </span>
                   <span class="review-card__rating" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><span lang="en">5.0</span></span>
@@ -1011,7 +1011,7 @@
                     <img class="avatar" src="https://bainkom-live-public.s3.me-central-1.amazonaws.com/users/%D9%90%D9%90Zaid-Alshaikh-afd5fa5d-a29e-49f0-aaf6-3303f316a447/c7ec39f5-c400-466b-971f-5677e7afda77.webp" alt="" width="40" height="40" loading="lazy" />
                   </span>
                   <span class="review-card__names">
-                    <strong>آمنة <small>· الإمارات</small></strong>
+                    <strong>آمنة <small><span class="m-cut">· </span>الإمارات</small></strong>
                     <span>صمّم مساحته <b>زيد الشيخ</b></span>
                   </span>
                   <span class="review-card__rating" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><span lang="en">5.0</span></span>
