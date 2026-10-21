@@ -1425,6 +1425,29 @@ button { font: inherit; color: inherit; }
   .quiz-alt__match { top: 84px; overflow: visible; }
   .quiz-alt__match::before { content: ""; position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; margin-left: -5px; border-radius: 2px; background: #fff; transform: rotate(45deg); }
 }
+
+/* style wheel: deeper perspective so side photos shrink toward the edges and the centre one reads a little larger */
+@media (max-width: 600px) {
+  .quiz-ring { perspective: 560px; }
+  .quiz-ring__spin { width: 90px; height: 118px; margin-left: -45px; transform: translateZ(-226px) rotateY(var(--a, 0deg)); }
+  .quiz-ring figure { transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(246px); }
+  .quiz-alt__stack { height: 132px; }
+  .quiz-alt__match { top: 92px; }
+}
+
+/* swipe rows: the first three cards are always there (so the third always peeks in); the reveal animation starts from the fourth */
+@media (max-width: 600px) {
+  .pkg-grid > [data-reveal]:nth-child(-n+3), .blog-grid > [data-reveal]:nth-child(-n+3) { opacity: 1; transform: none; transition: none; }
+}
+
+/* find a designer: join-tile colour, title and description share one edge, scroll hint on chip rows */
+@media (max-width: 600px) {
+  /* previous: watermark top-left on the gold gradient — url("./assets/mobile/b-watermark.svg") left -22px top -26px / 84px 105px no-repeat, linear-gradient(180deg, #f3e6d6, #f8f2e9) */
+  .picker { background: #f1ece3; }
+  .picker__head, .picker__desc { align-self: stretch; }
+  /* chip rows fade out on the far (left) side while there is more to scroll */
+  .picker .chips.has-more { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 56px); mask-image: linear-gradient(to right, transparent 0, #000 56px); }
+}
 @media (max-width: 600px) and (prefers-reduced-motion: reduce) {
   .mobile-tabbar__ai::before, .mobile-tabbar__ai::after, .mobile-tabbar__ai.is-talking .ai-chat__orb { animation: none; }
 }

@@ -169,13 +169,36 @@
         const i = show(angle);
         if (styleName) styleName.textContent = cards[i].dataset.style;
         if (t < 1) requestAnimationFrame(frame);
-        else { settle(); setTimeout(round, 3200); }
+        else { spinning = false; settle(); later(hold); }
       };
+      spinning = true;
       requestAnimationFrame(frame);
     };
+    // spins only while the card is on screen: starts as it scrolls into view, then rests between rounds
+    const hold = 6500;
+    let visible = false;
+    let spinning = false;
+    let timer = null;
+    const later = delay => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { timer = null; if (visible) round(); }, delay);
+    };
     show(angle);
-    if (!reducedMotion) whenVisible(ring, round, .4);
+    if (!reducedMotion && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting;
+        if (visible && !spinning && timer === null) later(500);
+      }, { threshold: .4 }).observe(ring.closest('.quiz-alt') || ring);
+    }
   }
+
+  // Find a designer: chip rows fade at the far end while there are more chips to scroll to (RTL scrollLeft runs negative)
+  document.querySelectorAll('.picker .chips').forEach(row => {
+    const update = () => row.classList.toggle('has-more', row.scrollWidth - row.clientWidth - Math.abs(row.scrollLeft) > 2);
+    update();
+    row.addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update);
+  });
 
   // Find a designer: search field types itself
   const typing = document.querySelector('[data-typing]');
