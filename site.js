@@ -128,6 +128,55 @@
     }, 2200));
   }
 
+  // Style wheel (phones): spins like a game, cycles style names while "loading", then settles on one
+  const ring = document.querySelector('[data-quiz-ring]');
+  if (ring && matchMedia('(max-width: 600px)').matches) {
+    const spin = ring.querySelector('.quiz-ring__spin');
+    const cards = [...spin.children];
+    const step = 360 / cards.length;
+    const match = document.querySelector('.quiz-alt__match');
+    const label = match?.querySelector('[data-match-label]');
+    const styleName = match?.querySelector('[data-match-style]');
+    const pct = match?.querySelector('[data-match-pct]');
+    let angle = 0;
+    let pick = 0;
+    const front = a => ((Math.round(-a / step) % cards.length) + cards.length) % cards.length;
+    const show = a => {
+      spin.style.transform = `rotateY(${a}deg)`;
+      const i = front(a);
+      cards.forEach((card, n) => card.classList.toggle('is-front', n === i));
+      return i;
+    };
+    const settle = () => {
+      match?.classList.remove('is-loading');
+      match?.classList.add('is-done');
+      if (label) label.textContent = 'ستايلك الأقرب:';
+      if (pct) pct.textContent = `${86 + Math.floor(Math.random() * 11)}%`;
+    };
+    const round = () => {
+      pick = (pick + 1 + Math.floor(Math.random() * (cards.length - 1))) % cards.length;
+      const from = angle;
+      const base = from - 720;
+      const to = base - (((base + pick * step) % 360) + 360) % 360;
+      const start = performance.now();
+      const duration = 3400;
+      match?.classList.remove('is-done');
+      match?.classList.add('is-loading');
+      if (label) label.textContent = 'جاري التحميل…';
+      const frame = now => {
+        const t = Math.min((now - start) / duration, 1);
+        angle = from + (to - from) * (1 - Math.pow(1 - t, 4));
+        const i = show(angle);
+        if (styleName) styleName.textContent = cards[i].dataset.style;
+        if (t < 1) requestAnimationFrame(frame);
+        else { settle(); setTimeout(round, 3200); }
+      };
+      requestAnimationFrame(frame);
+    };
+    show(angle);
+    if (!reducedMotion) whenVisible(ring, round, .4);
+  }
+
   // Find a designer: search field types itself
   const typing = document.querySelector('[data-typing]');
   if (typing && !reducedMotion) {

@@ -1241,7 +1241,6 @@ button { font: inherit; color: inherit; }
   .designers-track .designer-card--featured { flex-basis: 225px; }
   .designer-card__media { aspect-ratio: auto; height: 146px; margin: 0; border-radius: 18px; }
   .designer-card__meta { top: 10px; inset-inline: 8px; }
-  .designer-card__meta > :not(:first-child), .designer-card__meta .flag, .designer-card__count, .designer-card .gallery-btn, .designer-card .gallery-dots { display: none; }
   .designer-card__meta .chip-glass { padding: 4px 8px; background: rgba(14, 29, 36, .7); font-size: 11px; font-weight: 600; }
   .designer-card__id { display: block; padding: 2px 60px 8px 8px; }
   .designer-card__id .avatar--lg { position: absolute; top: -24px; inset-inline-start: 3px; width: 53px; height: 53px; margin: 0; }
@@ -1336,4 +1335,51 @@ button { font: inherit; color: inherit; }
 
   /* final CTA */
   .site-footer__cta-lead { opacity: .72; }
+}
+
+/* ===== Mobile round 2: roomier section heads, full designer card (flag, views, photo count, dots), 3D style wheel,
+   logo watermarks on packages and join, client avatar on reviews, blog keeps its start inset ===== */
+@media (max-width: 600px) {
+  .section-head, .section-head--split { margin-bottom: 16px; }
+
+  /* designers: smaller photo, avatar row always keeps its height so the name never slides under the avatar */
+  .designer-card__media { height: 128px; }
+  .designer-card__meta { inset-inline: 8px; }
+  .designer-card__meta .chip-glass { gap: 5px; }
+  .designer-card__meta .flag { width: 15px; height: 10px; }
+  .designer-card__count { bottom: 8px; inset-inline-end: 8px; padding: 4px 8px; background: rgba(14, 29, 36, .7); font-size: 11px; }
+  .designer-card .gallery-dots { bottom: 10px; gap: 4px; }
+  .designer-card .gallery-dots button { width: 6px; height: 6px; }
+  .designer-card .gallery-dots button[aria-current="true"] { width: 16px; }
+  .designer-card__id { min-height: 36px; padding-bottom: 6px; }
+  .designers-track .designer-card { gap: 8px; }
+
+  /* style quiz: 3D wheel of style photos; the "closest style" pill always sits in the middle */
+  .quiz-alt__card { display: none; }
+  .quiz-ring { position: absolute; inset: -44px 0 0; perspective: 640px; perspective-origin: 50% 40%; pointer-events: none; }
+  .quiz-ring__spin { position: absolute; top: 4px; left: 50%; width: 88px; height: 114px; margin-left: -44px; transform-style: preserve-3d; will-change: transform; }
+  .quiz-ring figure { position: absolute; inset: 0; margin: 0; overflow: hidden; border: 3px solid #fff; border-radius: 14px; background: #fff; box-shadow: 0 12px 22px -12px rgba(13, 28, 36, .4); transform: rotateY(calc(var(--i) * 45deg)) translateZ(124px); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+  .quiz-ring img { width: 100%; height: 100%; object-fit: cover; }
+  .quiz-ring figcaption { position: absolute; inset: auto 0 8px; width: fit-content; margin-inline: auto; padding: 3px 8px; border-radius: 999px; background: rgba(14, 29, 36, .75); color: #fff; font-size: 9px; font-weight: 600; opacity: 0; transition: opacity .25s; }
+  .quiz-ring figure.is-front figcaption { opacity: 1; }
+  .quiz-alt__match { left: 0; right: 0; width: max-content; margin-inline: auto; transform: none; animation: none; transition: box-shadow .3s; }
+  .quiz-alt__match.is-loading i { visibility: hidden; }
+  .quiz-alt__match.is-loading b { color: var(--muted); }
+  .quiz-alt__match.is-done { animation: match-pop .45s var(--ease); }
+  @keyframes match-pop { 50% { box-shadow: 0 0 0 4px rgba(196, 142, 83, .25), 0 4px 13px rgba(13, 28, 36, .35); } }
+
+  /* packages: faint gold logo watermark in the bottom-left corner */
+  #packages { background: url("./assets/mobile/b-watermark.svg") left -26px bottom -46px / 150px 188px no-repeat, linear-gradient(180deg, #f3f0e9, #faf8f4); }
+
+  /* reviews: the client's own avatar next to the client's name and country */
+  .avatar-pair .avatar--client { display: grid; }
+  .avatar-pair img.avatar { display: none; }
+
+  /* blog: snapping keeps the 16px start inset */
+  .blog-grid { scroll-padding-inline: 16px; }
+
+  /* join: full-width centered button, no arrow, faint logo watermark */
+  .join-one__col, .join-one__col:first-child, .join-one__col + .join-one__col { background: url("./assets/mobile/b-watermark.svg") left -22px bottom -30px / 84px 105px no-repeat, #f1ece3; }
+  .join-one__col .btn { justify-self: stretch; justify-content: center; width: 100%; }
+  .join-one__col .btn svg { display: none; }
 }
