@@ -10,10 +10,10 @@
     <link rel="preload" href="./assets/villa-white-model.png" as="image" />
     <link rel="preload" href="./assets/fonts/IBMPlexSansArabic-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="./assets/fonts/IBMPlexSansArabic-Bold.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="stylesheet" href="./styles.css?v=6" />
-    <link rel="stylesheet" href="./site.css?v=6" />
-    <script src="./reveal.js?v=6" defer></script>
-    <script src="./site.js?v=6" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=8" />
+    <link rel="stylesheet" href="./site.css?v=8" />
+    <script src="./reveal.js?v=8" defer></script>
+    <script src="./site.js?v=8" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
@@ -96,66 +96,46 @@
             <p class="section-lead">من أول استشارة وحتى آخر تفصيلة في الإضاءة، نوصلك بالمصمم المناسب لكل مرحلة.</p>
           </header>
 
-          <div class="services-grid">
-            <article class="service-card service-card--feature" data-reveal data-card-link>
-              <span class="service-card__launch" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 17L7 7M7 15V7h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              <span class="service-card__icon"><img src="https://www.bainkom.com/images/homepage/services/1.svg" alt="" width="48" height="48" loading="lazy" /></span>
-              <h3>الاستشارة مع مصمم</h3>
-              <p>احصل على استشارة تصميم مخصصة لتحويل رؤيتك إلى واقع.</p>
-              <div class="service-card__foot">
-                <span class="service-card__note">احجز استشارتك المجانية <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <a class="service-card__cta" href="https://www.bainkom.com/ar/our-designers?hasAvailability=true"><span class="live-dot" aria-hidden="true"></span>اكتشف المصممين المتاحين</a>
+          <div class="svc-row" data-reveal>
+            <article class="svc" data-card-link>
+              <img class="svc__img" src="./assets/services/consultation.webp" alt="" loading="lazy" />
+              <div class="svc__body">
+                <h3>الاستشارة<br class="svc__br" /> مع مصمم</h3>
+                <p>احصل على استشارة تصميم مخصصة لتحويل رؤيتك إلى واقع.</p>
               </div>
+              <a class="svc__cta" href="https://www.bainkom.com/ar/our-designers?hasAvailability=true">اكتشف المصممين المتاحين <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </article>
-            <article class="service-card service-card--under-feature" data-reveal data-card-link>
-              <span class="service-card__launch" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 17L7 7M7 15V7h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              <span class="service-card__icon"><img src="https://www.bainkom.com/images/homepage/services/6.svg" alt="" width="48" height="48" loading="lazy" /></span>
-              <h3>تصميم الإضاءة</h3>
-              <p>اكتشف خدمات تصميم الإضاءة التي تضفي لمسة سحرية على كل مساحة.</p>
-              <div class="service-card__foot">
-                
-                <a class="service-card__cta" href="https://www.bainkom.com/ar/our-designers?specialties=lighting-design"><span class="live-dot" aria-hidden="true"></span>اكتشف المصممين المتاحين</a>
+            <article class="svc" data-card-link>
+              <img class="svc__img" src="./assets/services/architecture.webp" alt="" loading="lazy" />
+              <div class="svc__body">
+                <h3>هندسة<br class="svc__br" /> معمارية</h3>
+                <p>خدمات معمارية تحوّل الأفكار إلى تصاميم رائعة.</p>
               </div>
+              <a class="svc__cta" href="https://www.bainkom.com/ar/our-designers/all/architect/styles">اكتشف المصممين المتاحين <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </article>
-            <article class="service-card" data-reveal data-card-link>
-              <span class="service-card__launch" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 17L7 7M7 15V7h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              <span class="service-card__icon"><img src="https://www.bainkom.com/images/homepage/services/2.svg" alt="" width="48" height="48" loading="lazy" /></span>
-              <h3>تصميم داخلي</h3>
-              <p>استمتع بخدمات تصميم داخلي مخصصة لتحويل أفكارك إلى واقع.</p>
-              <div class="service-card__foot">
-                
-                <a class="service-card__cta" href="https://www.bainkom.com/ar/our-designers/all/interior-designer/styles"><span class="live-dot" aria-hidden="true"></span>اكتشف المصممين المتاحين</a>
+            <article class="svc" data-card-link>
+              <img class="svc__img" src="./assets/services/interior.webp" alt="" loading="lazy" />
+              <div class="svc__body">
+                <h3>تصميم<br class="svc__br" /> داخلي</h3>
+                <p>تصميم داخلي مخصص يحوّل أفكارك إلى واقع.</p>
               </div>
+              <a class="svc__cta" href="https://www.bainkom.com/ar/our-designers/all/interior-designer/styles">اكتشف المصممين المتاحين <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </article>
-            <article class="service-card" data-reveal data-card-link>
-              <span class="service-card__launch" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 17L7 7M7 15V7h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              <span class="service-card__icon"><img src="https://www.bainkom.com/images/homepage/services/3.svg" alt="" width="48" height="48" loading="lazy" /></span>
-              <h3>هندسة معمارية</h3>
-              <p>استمتع بخدماتنا المعمارية التي تحول الأفكار إلى تصاميم رائعة.</p>
-              <div class="service-card__foot">
-                
-                <a class="service-card__cta" href="https://www.bainkom.com/ar/our-designers/all/architect/styles"><span class="live-dot" aria-hidden="true"></span>اكتشف المصممين المتاحين</a>
+            <article class="svc" data-card-link>
+              <img class="svc__img" src="./assets/services/lighting.jpg" alt="" loading="lazy" />
+              <div class="svc__body">
+                <h3>تصميم<br class="svc__br" /> الإضاءة</h3>
+                <p>تصميم إضاءة يضفي لمسة سحرية على كل مساحة.</p>
               </div>
+              <a class="svc__cta" href="https://www.bainkom.com/ar/our-designers?specialties=lighting-design">اكتشف المصممين المتاحين <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </article>
-            <article class="service-card" data-reveal data-card-link>
-              <span class="service-card__launch" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 17L7 7M7 15V7h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              <span class="service-card__icon"><img src="https://www.bainkom.com/images/homepage/services/4.svg" alt="" width="48" height="48" loading="lazy" /></span>
-              <h3>تصميم حدائق</h3>
-              <p>اكتشف جمال تصميم المناظر الطبيعية الذي يبرز جمال البيئة.</p>
-              <div class="service-card__foot">
-                
-                <a class="service-card__cta" href="https://www.bainkom.com/ar/our-designers?specialties=landscape-design"><span class="live-dot" aria-hidden="true"></span>اكتشف المصممين المتاحين</a>
+            <article class="svc" data-card-link>
+              <img class="svc__img" src="./assets/services/landscape.webp" alt="" loading="lazy" />
+              <div class="svc__body">
+                <h3>تصميم<br class="svc__br" /> حدائق</h3>
+                <p>تصميم مناظر طبيعية يبرز جمال البيئة من حولك.</p>
               </div>
-            </article>
-            <article class="service-card" data-reveal data-card-link>
-              <span class="service-card__launch" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 17L7 7M7 15V7h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              <span class="service-card__icon"><img src="https://www.bainkom.com/images/homepage/services/5.svg" alt="" width="48" height="48" loading="lazy" /></span>
-              <h3>تنسيق داخلي</h3>
-              <p>خدمات تصميم داخلي مخصصة لتحويل أفكارك إلى واقع.</p>
-              <div class="service-card__foot">
-                
-                <a class="service-card__cta" href="https://www.bainkom.com/ar/our-designers/all/interior-stylist/styles"><span class="live-dot" aria-hidden="true"></span>اكتشف المصممين المتاحين</a>
-              </div>
+              <a class="svc__cta" href="https://www.bainkom.com/ar/our-designers?specialties=landscape-design">اكتشف المصممين المتاحين <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </article>
           </div>
         </div>
