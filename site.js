@@ -39,7 +39,7 @@
 
   // Whole card is clickable: it follows the card's own CTA link
   document.querySelectorAll('[data-card-link]').forEach(card => {
-    const link = card.querySelector('.service-card__cta, .svc__cta, .package-card__foot a, .card-drawer a');
+    const link = card.querySelector('.service-card__cta, .svc__cta, .package-card__foot a, .pkg__foot a, .card-drawer a');
     if (!link) return;
     card.addEventListener('click', event => {
       if (event.target.closest('a, button')) return;

@@ -855,3 +855,26 @@ button { font: inherit; color: inherit; }
   .svc__cta { height: 48px; font-size: 14px; inset: auto 12px 12px; }
 }
 @media (prefers-reduced-motion: reduce) { .svc, .svc__img, .svc p, .svc__cta { transition: none; } }
+
+/* ===== Packages: image-top cards (Figma 49:2319). Old .package-card styles above are kept for the commented-out markup. ===== */
+.pkg-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.pkg { display: flex; flex-direction: column; padding: 4px; border-radius: 28px; background: var(--white); border: 1px solid #e3e3e0; transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+.pkg:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.pkg__media { position: relative; height: 224px; margin-bottom: -45px; overflow: hidden; border-radius: 24px 24px 0 0; }
+.pkg__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+.pkg__media::before { content: ""; position: absolute; inset: 0; z-index: 1; background: var(--tint); mix-blend-mode: soft-light; pointer-events: none; }
+.pkg__media::after { content: ""; position: absolute; inset: auto 0 0; z-index: 1; height: 70px; background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff); pointer-events: none; }
+.pkg:hover .pkg__media img { transform: scale(1.06); }
+.pkg__body { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 24px; margin: 0 8px; padding: 16px; border-radius: 21px; background: var(--white); }
+.pkg h3 { font-size: 24px; font-weight: 700; line-height: 1.3; letter-spacing: -.5px; }
+.pkg .feature-list { font-size: 13px; line-height: 1.6; }
+.pkg__foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding: 16px; }
+.pkg__price { font-size: 32px; font-weight: 700; line-height: 1; letter-spacing: -.5px; direction: ltr; }
+.pkg__cta { min-height: 48px; padding-inline: 22px; background: var(--white); border-color: #e3e3e0; }
+.pkg:hover .pkg__cta { border-color: var(--gold); background: var(--gold-soft); }
+@media (max-width: 1100px) { .pkg-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) {
+  .pkg-grid { grid-template-columns: 1fr; }
+  .pkg h3 { font-size: 21px; }
+  .pkg__price { font-size: 28px; }
+}
