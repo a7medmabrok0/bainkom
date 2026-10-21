@@ -115,14 +115,6 @@
     sync(0);
   });
 
-  // Reviews: tapping a card reveals "work with the designer"
-  document.querySelectorAll('[data-review]').forEach(card => card.addEventListener('click', event => {
-    if (event.target.closest('a, button')) return;
-    const wasActive = card.classList.contains('is-active');
-    document.querySelectorAll('[data-review].is-active').forEach(other => other.classList.remove('is-active'));
-    card.classList.toggle('is-active', !wasActive);
-  }));
-
   // Quiz demo: the picked image moves around like someone taking the quiz
   const quizDemo = document.querySelector('[data-quiz-demo]');
   if (quizDemo && !reducedMotion) {
@@ -288,6 +280,30 @@
     }).observe(panel, { attributes: true, attributeFilter: ['class'] });
     timer = setInterval(tick, interval);
     show(0);
+  }
+  // Find a designer: one pick per group fills the summary card and builds the designers link
+  const picker = document.querySelector('[data-picker]');
+  if (picker) {
+    const link = picker.querySelector('[data-pick-link]');
+    const value = key => picker.querySelector(`[data-pick="${key}"] [aria-pressed="true"]`)?.dataset.value;
+    const update = () => {
+      link.href = `https://www.bainkom.com/ar/our-designers/${value('country') || 'all'}/${value('profession') || 'professions'}/${value('style') || 'styles'}`;
+    };
+    picker.querySelectorAll('.pick-chip').forEach(chip => chip.addEventListener('click', () => {
+      const group = chip.closest('[data-pick]');
+      group.querySelectorAll('.pick-chip').forEach(other => other.setAttribute('aria-pressed', String(other === chip)));
+      const out = picker.querySelector(`[data-pick-out="${group.dataset.pick}"]`);
+      out.textContent = chip.textContent;
+      out.classList.remove('is-changed'); out.offsetWidth; out.classList.add('is-changed');
+      update();
+    }));
+    update();
+  }
+  // Bottom edge blur: fade it out once the footer comes into view
+  const edgeBlur = document.querySelector('.edge-blur');
+  const footer = document.querySelector('.site-footer');
+  if (edgeBlur && footer && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => edgeBlur.classList.toggle('is-hidden', entry.isIntersecting)).observe(footer);
   }
   // "+N" chips reveal the rest of a list
   document.querySelectorAll('[data-chip-more]').forEach(button => button.addEventListener('click', () => {

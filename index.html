@@ -10,10 +10,10 @@
     <link rel="preload" href="./assets/villa-white-model.png" as="image" />
     <link rel="preload" href="./assets/fonts/IBMPlexSansArabic-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="./assets/fonts/IBMPlexSansArabic-Bold.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="stylesheet" href="./styles.css?v=13" />
-    <link rel="stylesheet" href="./site.css?v=13" />
-    <script src="./reveal.js?v=13" defer></script>
-    <script src="./site.js?v=13" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=17" />
+    <link rel="stylesheet" href="./site.css?v=17" />
+    <script src="./reveal.js?v=17" defer></script>
+    <script src="./site.js?v=17" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
@@ -63,22 +63,30 @@
 
         <div class="hero-content">
           <div class="container">
-            <h1 id="hero-title" class="hero-title">حين يلتقي التصميم <span class="text-gold">بالتنفيذ</span></h1>
-            <p class="hero-lead">بينكم تصمّم، وبيور سبيس تحوّل التصميم إلى واقع. اختر مصممك المعتمد، وتابع مساحتك وهي تنتقل من المخطط إلى الواقع.</p>
-            <div class="hero-actions">
-              <a class="btn btn--ai btn--lg" href="https://www.bainkom.com/ar/interior-design-style-quiz">
-                <svg class="btn--ai__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3.5l1.6 4.4a3 3 0 0 0 1.8 1.8l4.4 1.6-4.4 1.6a3 3 0 0 0-1.8 1.8L10 19.1l-1.6-4.4a3 3 0 0 0-1.8-1.8L2.2 11.3l4.4-1.6a3 3 0 0 0 1.8-1.8z" fill="currentColor"/><path d="M18.5 2.5l.7 1.8a1.2 1.2 0 0 0 .7.7l1.8.7-1.8.7a1.2 1.2 0 0 0-.7.7l-.7 1.8-.7-1.8a1.2 1.2 0 0 0-.7-.7l-1.8-.7 1.8-.7a1.2 1.2 0 0 0 .7-.7z" fill="currentColor"/></svg>
-                <span>ابحث عن ستايلك</span>
-              </a>
-              <a class="btn btn--glass btn--lg" href="https://designers.purespace.ae/ar/">حوّل تصميمك إلى واقع
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
+            <div class="hero-copy">
+              <h1 id="hero-title" class="hero-title">حين يلتقي التصميم <span class="text-gold">بالتنفيذ</span></h1>
+              <p class="hero-lead">بينكم تصمّم، وبيور سبيس تحوّل التصميم إلى واقع. اختر مصممك المعتمد، وتابع مساحتك وهي تنتقل من المخطط إلى الواقع.</p>
+              <div class="hero-actions">
+                <a class="btn btn--ai btn--lg" href="https://www.bainkom.com/ar/interior-design-style-quiz">
+                  <svg class="btn--ai__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3.5l1.6 4.4a3 3 0 0 0 1.8 1.8l4.4 1.6-4.4 1.6a3 3 0 0 0-1.8 1.8L10 19.1l-1.6-4.4a3 3 0 0 0-1.8-1.8L2.2 11.3l4.4-1.6a3 3 0 0 0 1.8-1.8z" fill="currentColor"/><path d="M18.5 2.5l.7 1.8a1.2 1.2 0 0 0 .7.7l1.8.7-1.8.7a1.2 1.2 0 0 0-.7.7l-.7 1.8-.7-1.8a1.2 1.2 0 0 0-.7-.7l-1.8-.7 1.8-.7a1.2 1.2 0 0 0 .7-.7z" fill="currentColor"/></svg>
+                  <span>ابحث عن ستايلك</span>
+                </a>
+                <a class="btn btn--glass btn--lg" href="https://designers.purespace.ae/ar/">حوّل تصميمك إلى واقع
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
             </div>
+            <dl class="hero-stats" data-stats aria-label="بينكم بالأرقام">
+              <div><dd lang="en"><span data-count="60">0</span>+</dd><dt>مصمم معتمد</dt></div>
+              <div><dd lang="en"><span data-count="1500" data-format="comma">0</span>+</dd><dt>رحلة تصميم</dt></div>
+              <div><dd lang="en"><span data-count="5" data-decimals="2">0</span></dd><dt>تقييم جوجل</dt></div>
+            </dl>
           </div>
         </div>
       </section>
 
-      <!-- ============ Numbers ============ -->
+      <!-- ============ Numbers ============
+           Moved into the hero as .hero-stats. Previous full-width strip, kept for reference:
       <section class="stats-strip" aria-label="بينكم بالأرقام">
         <div class="container">
           <dl class="stats-strip__list" data-stats>
@@ -88,6 +96,7 @@
           </dl>
         </div>
       </section>
+      -->
 
       <!-- ============ Services ============ -->
       <section class="section" id="services" aria-labelledby="services-title">
@@ -299,6 +308,41 @@
       </section>
 
       <!-- ============ Steps ============ -->
+      <section class="section flow-section" id="how" aria-labelledby="how-title">
+        <div class="container">
+          <header class="section-head" data-reveal>
+            <p class="eyebrow"><span class="eyebrow__dot"></span>كيف تعمل بينكم</p>
+            <h2 id="how-title" class="section-title">تصميم أحلامك في <span class="text-gold">ثلاث خطوات</span></h2>
+          </header>
+
+          <div class="flow" data-reveal>
+            <svg class="flow__arrow flow__arrow--top" viewBox="0 0 160 64" aria-hidden="true"><defs><filter id="sketch" x="-10%" y="-30%" width="120%" height="160%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter></defs><g filter="url(#sketch)"><path d="M150 56c-6-14-14-30-34-38-21-9-45-6-66 3-12 5-22 11-33 20" pathLength="1"/><path class="flow__arrow-ghost" d="M148 54c-7-13-16-28-35-35-20-8-43-5-63 4-12 5-21 11-31 19" pathLength="1"/><path d="M33 33c-6 2-11 4-16 8 4 1 11 3 18 7" pathLength="1"/></g></svg>
+            <ol class="flow__list">
+              <li class="flow-card" data-num="01" style="--i:0">
+                <span class="flow-card__num" lang="en">01</span>
+                <h3>شاركنا ما تحتاجه</h3>
+                <p>شاركنا نطاق مشروعك، ستايلك، ومساحتك — أو أخبرنا بما تحتاج! وسنطابقك مع مصممين يناسبون رؤيتك وميزانيتك.</p>
+              </li>
+              <li class="flow-card" data-num="02" style="--i:1">
+                <span class="flow-card__num" lang="en">02</span>
+                <h3>قارن العروض واختر المصمم</h3>
+                <p>سيصلك عدة عروض من مصممين معتمدين، تحدث معهم مباشرة، قارن بين العروض، واختر الأنسب لك.</p>
+              </li>
+              <li class="flow-card" data-num="03" style="--i:2">
+                <span class="flow-card__num" lang="en">03</span>
+                <h3>أكمل مشروعك</h3>
+                <p>انطلق في رحلتك التصميمية بخطة دفع مرنة حسب مراحل المشروع، تعاون مع مصممك عن بعد وشاهد مساحتك تتجسّد خطوة بخطوة.</p>
+              </li>
+            </ol>
+            <svg class="flow__arrow flow__arrow--bottom" viewBox="0 0 160 64" aria-hidden="true"><g filter="url(#sketch)"><path d="M150 6c-4 15-13 30-31 39-20 10-46 11-68 4-12-4-22-9-32-17" pathLength="1"/><path class="flow__arrow-ghost" d="M147 9c-5 14-14 27-31 35-19 9-44 10-65 3-12-4-21-9-30-16" pathLength="1"/><path d="M36 26c-7 1-13 3-18 6 3 4 7 10 10 17" pathLength="1"/></g></svg>
+          </div>
+          <p class="flow__note" data-reveal>كل مشروع له طبيعته، لذلك قد تختلف بعض التفاصيل<br />حسب احتياج المشروع ونطاقه.</p>
+        </div>
+      </section>
+
+      <!-- Previous "how it works" section (pinned scroll + mockups). It sits in a <template> so it never renders;
+           to restore it, move its contents back out of the template and delete the .flow-section above. -->
+      <template id="how-previous">
       <section class="steps-scroll" id="how" aria-labelledby="how-title" data-steps-scroll>
         <div class="steps-scroll__sticky">
         <div class="container">
@@ -454,6 +498,7 @@
         </div>
         </div>
       </section>
+      </template>
 
       <!-- ============ Style quiz CTA ============ -->
       <section class="section section--flush quiz-section" aria-labelledby="quiz-title">
@@ -801,7 +846,7 @@
         <div class="container">
           <header class="section-head section-head--split" data-reveal>
             <div>
-              <p class="eyebrow"><span class="eyebrow__dot"></span>تقييم <span lang="en">5.00</span> على جوجل</p>
+              <p class="eyebrow"><span class="eyebrow__dot"></span>تقييم <span class="eyebrow__stars" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg></span> على جوجل</p>
               <h2 id="reviews-title" class="section-title">ماذا يقول <span class="text-gold">العملاء</span></h2>
             </div>
             <div class="carousel-nav">
@@ -822,7 +867,6 @@
                 </div>
               </div>
               <div class="review-card__body">
-                <div class="rating-stars rating-stars--sm" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg></div>
                 <blockquote>البرنامج رائع، المصممين مبدعين ومتعاونين وخدمة العملاء فعلًا تهتم برضى عملائهم. أسعارهم معقولة وغير مبالغ فيها، طبعًا أسعار المصممين تختلف. تعاملت مع أحمد وكان أكثر من رائع.</blockquote>
                 <figcaption class="review-card__people">
                   <span class="avatar-pair" aria-hidden="true">
@@ -833,9 +877,9 @@
                     <strong>آمنة <small>· الكويت</small></strong>
                     <span>صمّم مساحته <b>أحمد مبروك</b></span>
                   </span>
+                  <span class="review-card__rating" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><span lang="en">5.0</span></span>
                 </figcaption>
               </div>
-              <div class="card-drawer"><a class="btn btn--dark btn--block" href="https://wa.me/+201113949916" target="_blank" rel="noopener">اعمل مع أحمد <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
             </figure>
             <figure class="review-card" data-compare data-review tabindex="0">
               <div class="review-card__media">
@@ -848,7 +892,6 @@
                 </div>
               </div>
               <div class="review-card__body">
-                <div class="rating-stars rating-stars--sm" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg></div>
                 <blockquote>كانت تجربتي مع منصة بينكم مميزة للغاية. المصمّمة كانت محترفة وملتزمة بالمواعيد، والتكلفة كانت مناسبة جدًا. وفريق الدعم كان متعاونًا وسريع الاستجابة في كل مرة احتجت فيها إلى المساعدة.</blockquote>
                 <figcaption class="review-card__people">
                   <span class="avatar-pair" aria-hidden="true">
@@ -859,9 +902,9 @@
                     <strong>أسامة <small>· الأردن</small></strong>
                     <span>صمّم مساحته <b>ندى مجدي</b></span>
                   </span>
+                  <span class="review-card__rating" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><span lang="en">5.0</span></span>
                 </figcaption>
               </div>
-              <div class="card-drawer"><a class="btn btn--dark btn--block" href="https://www.bainkom.com/ar/our-designers">اعمل مع ندى <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
             </figure>
             <figure class="review-card" data-compare data-review tabindex="0">
               <div class="review-card__media">
@@ -874,7 +917,6 @@
                 </div>
               </div>
               <div class="review-card__body">
-                <div class="rating-stars rating-stars--sm" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg></div>
                 <blockquote>إنها منصة رائعة، لقد صممت مطبخي مع مصممة موهوبة. وأتوجه بالشكر إلى فريقهم، إنهم يمتلكون مصممين مذهلين وبأسعار معقولة جدًا.</blockquote>
                 <figcaption class="review-card__people">
                   <span class="avatar-pair" aria-hidden="true">
@@ -885,9 +927,9 @@
                     <strong>محمد <small>· السعودية</small></strong>
                     <span>صمّم مساحته <b>ميرنا الشرقاوي</b></span>
                   </span>
+                  <span class="review-card__rating" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><span lang="en">5.0</span></span>
                 </figcaption>
               </div>
-              <div class="card-drawer"><a class="btn btn--dark btn--block" href="https://www.bainkom.com/ar/our-designers">اعمل مع ميرنا <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
             </figure>
             <figure class="review-card" data-compare data-review tabindex="0">
               <div class="review-card__media">
@@ -900,7 +942,6 @@
                 </div>
               </div>
               <div class="review-card__body">
-                <div class="rating-stars rating-stars--sm" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg></div>
                 <blockquote>تجربة ممتازة! فهم المصمم رؤيتي وقدّم نتيجة جميلة، وكان سريع الاستجابة وسريعًا في التنفيذ، بالإضافة إلى مرونته مع التعديلات والمراجعات التي طلبتها. أوصي به بشدة.</blockquote>
                 <figcaption class="review-card__people">
                   <span class="avatar-pair" aria-hidden="true">
@@ -911,9 +952,9 @@
                     <strong>نايا <small>· الأردن</small></strong>
                     <span>صمّم مساحته <b>اياد بدره</b></span>
                   </span>
+                  <span class="review-card__rating" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><span lang="en">5.0</span></span>
                 </figcaption>
               </div>
-              <div class="card-drawer"><a class="btn btn--dark btn--block" href="https://www.bainkom.com/ar/our-designers">اعمل مع اياد <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
             </figure>
             <figure class="review-card" data-compare data-review tabindex="0">
               <div class="review-card__media">
@@ -926,7 +967,6 @@
                 </div>
               </div>
               <div class="review-card__body">
-                <div class="rating-stars rating-stars--sm" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg></div>
                 <blockquote>الحمد لله كانت تجربة ممتازة والمهندس ما قصّر، يعطيه العافية!</blockquote>
                 <figcaption class="review-card__people">
                   <span class="avatar-pair" aria-hidden="true">
@@ -937,9 +977,9 @@
                     <strong>آمنة <small>· الإمارات</small></strong>
                     <span>صمّم مساحته <b>زيد الشيخ</b></span>
                   </span>
+                  <span class="review-card__rating" role="img" aria-label="5 من 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.87l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><span lang="en">5.0</span></span>
                 </figcaption>
               </div>
-              <div class="card-drawer"><a class="btn btn--dark btn--block" href="https://www.bainkom.com/ar/our-designers">اعمل مع زيد <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
             </figure>
         </div>
       </section>
@@ -1011,6 +1051,65 @@
 
       <!-- ============ Find a designer ============ -->
       <section class="section" id="find" aria-labelledby="find-title">
+        <div class="container">
+          <div class="picker" data-picker data-reveal>
+            <header class="picker__head">
+              <p class="eyebrow"><span class="eyebrow__dot"></span>ابحث عن مصمم</p>
+              <h2 id="find-title" class="section-title">المصمم المناسب <span class="text-gold">لمساحتك</span></h2>
+            </header>
+            <p class="picker__desc">اختر التخصص والستايل والدولة، ونرشّح لك المصممين الأنسب لمساحتك — كل المصممين معتمدون وأعمالهم موثّقة على المنصة.</p>
+            <form class="picker__form" onsubmit="return false" aria-label="اختر مواصفات المصمم">
+              <fieldset class="picker__group" data-pick="profession">
+                <legend>التخصص</legend>
+                <ul class="chips">
+                  <li><button type="button" class="pick-chip" aria-pressed="true" data-value="interior-designer">مصمم داخلي</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="architect">مصمم معماري</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="interior-stylist">مصمم ديكور</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="professions">جميع التخصصات</button></li>
+                </ul>
+              </fieldset>
+              <fieldset class="picker__group" data-pick="style">
+                <legend>الستايل</legend>
+                <ul class="chips">
+                  <li><button type="button" class="pick-chip" aria-pressed="true" data-value="modern">الحديث</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="contemporary">المعاصر</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="minimal">البسيط</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="classical">الكلاسيكي</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="industrial">الصناعي</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="japandi">الجاباندي</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="islamic">الإسلامي</button></li>
+                </ul>
+              </fieldset>
+              <fieldset class="picker__group" data-pick="country">
+                <legend>الدولة</legend>
+                <ul class="chips">
+                  <li><button type="button" class="pick-chip" aria-pressed="true" data-value="uae">الإمارات</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="saudi-arabia">السعودية</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="egypt">مصر</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="jordan">الأردن</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="kuwait">الكويت</button></li>
+                  <li><button type="button" class="pick-chip" aria-pressed="false" data-value="lebanon">لبنان</button></li>
+                </ul>
+              </fieldset>
+            </form>
+            <aside class="picker__summary" aria-live="polite">
+              <h3>ملخص طلبك</h3>
+              <dl>
+                <div><dt>التخصص</dt><dd data-pick-out="profession">مصمم داخلي</dd></div>
+                <div><dt>الستايل</dt><dd data-pick-out="style">الحديث</dd></div>
+                <div><dt>الدولة</dt><dd data-pick-out="country">الإمارات</dd></div>
+              </dl>
+              <p class="picker__live"><span class="live-dot"></span> <b lang="en">12</b> مصمم متاح الآن</p>
+              <a class="btn btn--gold btn--lg btn--block" href="https://www.bainkom.com/ar/our-designers/uae/interior-designer/modern" data-pick-link>اعرض المصممين <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Previous "find a designer" section (chips + animated match list). It sits in a <template> so it never renders;
+           to restore it, move its contents back out of the template and delete the section above. -->
+      <template id="find-previous">
+      <section class="section" id="find" aria-labelledby="find-title">
         <div class="container find">
           <div class="find__text" data-reveal>
             <p class="eyebrow"><span class="eyebrow__dot"></span>ابحث عن مصمم</p>
@@ -1069,10 +1168,12 @@
           </div>
         </div>
       </section>
+      </template>
       <!-- ============ Start project CTA ============ -->
       <section class="section cta-band" aria-labelledby="cta-title">
         <div class="container">
         <div class="site-footer__cta cta-card" data-reveal>
+          <span class="cta-halo" aria-hidden="true"></span>
           <span class="site-footer__mark" aria-hidden="true"><svg viewBox="26 12 31 49"><path d="M35.18 16.94c.78 0 1.54.2 2.25.6l12.77 7.23c2.05 1.16 2.27 3.08 2.27 3.86s-.22 2.69-2.27 3.85l-12.77 7.23c-.71.4-1.47.6-2.25.6-2.18 0-4.54-1.7-4.54-4.46V21.4c0-2.76 2.36-4.46 4.54-4.46zm0-3.63c-4.3 0-8.25 3.37-8.25 8.09v14.45c0 4.71 3.95 8.09 8.25 8.09 1.37 0 2.78-.35 4.1-1.1l12.77-7.23c2.75-1.55 4.12-4.27 4.12-6.99s-1.37-5.44-4.12-6.99L39.28 14.4c-1.32-.75-2.73-1.1-4.1-1.1z"/><path d="M35.2 32.63c.78 0 1.54.2 2.26.6l12.8 7.25c2.05 1.16 2.27 3.09 2.27 3.86s-.22 2.7-2.27 3.87l-12.8 7.24c-.72.4-1.47.6-2.26.6-2.2 0-4.56-1.71-4.56-4.48V37.1c0-2.77 2.37-4.48 4.56-4.48m0-3.6c-4.31 0-8.27 3.37-8.27 8.1v14.48c0 4.72 3.95 8.1 8.27 8.1 1.37 0 2.78-.35 4.1-1.1l12.8-7.23c2.75-1.56 4.13-4.28 4.13-7.01s-1.38-5.45-4.13-7l-12.8-7.25c-1.33-.75-2.74-1.1-4.1-1.1z"/></svg></span>
           <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span>استشارة مجانية · بدون أي التزام</p>
           <h2 id="cta-title">جاهز تبدأ <span class="text-gold">مشروعك؟</span></h2>
